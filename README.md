@@ -1,73 +1,95 @@
-# Welcome to your Lovable project
+# Game Price Pal
 
-## Project info
+A comprehensive game price comparison tool that helps gamers find the best deals across multiple digital storefronts and regions.
 
-**URL**: https://lovable.dev/projects/b92a8219-4ee7-4e5c-bfa1-3dadf3c4f258
+## Features
 
-## How can I edit this code?
+- **Multi-Store Comparison**: Compare prices across Steam, Epic Games Store, GOG, Xbox, and PlayStation stores
+- **Regional Pricing**: Support for 10+ regions including US, EU, UK, India, Japan, China, Brazil, Russia, Australia, and Canada
+- **Real-time Price Tracking**: Get up-to-date pricing information with sale indicators
+- **Advanced Search**: Search games by title, developer, or genre
+- **Responsive Design**: Optimized for desktop, tablet, and mobile devices
+- **Error Handling**: Comprehensive error handling with user-friendly dialogs
+- **High-Quality Images**: Proper game cover art dimensions and quality
 
-There are several ways of editing your application.
+## Supported Regions
 
-**Use Lovable**
+- 🇺🇸 United States (USD)
+- 🇪🇺 European Union (EUR)
+- 🇬🇧 United Kingdom (GBP)
+- 🇮🇳 India (INR)
+- 🇯🇵 Japan (JPY)
+- 🇨🇳 China (CNY)
+- 🇧🇷 Brazil (BRL)
+- 🇷🇺 Russia (RUB)
+- 🇦🇺 Australia (AUD)
+- 🇨🇦 Canada (CAD)
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/b92a8219-4ee7-4e5c-bfa1-3dadf3c4f258) and start prompting.
+## Supported Stores
 
-Changes made via Lovable will be committed automatically to this repo.
+- **Steam**: The world's largest PC gaming platform
+- **Epic Games Store**: Epic's digital distribution platform
+- **GOG**: DRM-free games from CD PROJEKT
+- **Xbox**: Microsoft's gaming ecosystem
+- **PlayStation**: Sony's digital gaming platform
 
-**Use your preferred IDE**
+## Technology Stack
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+- **Frontend**: React 18 with TypeScript
+- **Build Tool**: Vite
+- **Styling**: Tailwind CSS with custom design system
+- **UI Components**: Radix UI primitives with shadcn/ui
+- **State Management**: React Hooks
+- **Routing**: React Router DOM
+- **Icons**: Lucide React + Official store icons
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+## Development
 
-Follow these steps:
+### Prerequisites
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+- Node.js 18+ or Bun
+- npm, yarn, or bun package manager
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+### Installation
 
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
+1. Clone the repository:
+```bash
+git clone https://github.com/your-username/game-price-pal.git
+cd game-price-pal
 ```
 
-**Edit a file directly in GitHub**
+2. Install dependencies:
+```bash
+npm install
+# or
+yarn install
+# or
+bun install
+```
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+3. Start the development server:
+```bash
+npm run dev
+# or
+yarn dev
+# or
+bun dev
+```
 
-**Use GitHub Codespaces**
+4. Open [http://localhost:5173](http://localhost:5173) in your browser
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+### Building for Production
 
-## What technologies are used for this project?
+```bash
+npm run build
+# or
+yarn build
+# or
+bun build
+```
 
-This project is built with:
+The built files will be in the `dist/` directory.
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+## License
 
-## How can I deploy this project?
-
-Simply open [Lovable](https://lovable.dev/projects/b92a8219-4ee7-4e5c-bfa1-3dadf3c4f258) and click on Share -> Publish.
-
-## Can I connect a custom domain to my Lovable project?
-
-Yes, you can!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
