@@ -1,5 +1,4 @@
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
-import { Region } from '@/types/game';
 import { regions } from '@/data/regions';
 
 interface RegionSelectorProps {

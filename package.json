@@ -11,7 +11,12 @@
     "preview": "vite preview",
     "type-check": "tsc --noEmit",
     "clean": "rm -rf node_modules/.vite dist",
-    "setup": "npm install && npm run type-check"
+    "setup": "npm install && npm run type-check",
+    "create:exe": "node create-exe.js",
+    "create:apk": "node create-apk-setup.js",
+    "mobile:build": "node build-apk.js",
+    "mobile:sync": "npx cap sync",
+    "mobile:android": "npx cap open android"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.9.0",

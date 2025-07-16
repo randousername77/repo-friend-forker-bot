@@ -17,7 +17,9 @@ export default function Deals() {
   const [sortBy, setSortBy] = useState("highest-discount");
 
   const handleRefresh = () => {
-    refetch();
+    if (refetch) {
+      refetch();
+    }
     toast({
       title: "Deals loaded",
       description: "Latest deals have been updated successfully.",
@@ -82,7 +84,6 @@ export default function Deals() {
               <h2 className="text-xl font-semibold">Hot Deals</h2>
               <Badge variant="destructive" className="animate-pulse">Live</Badge>
             </div>
-            <GameGrid games={hotDeals} selectedRegion={selectedRegion} />
             <GameGrid games={hotDeals} selectedRegion={selectedRegion} searchQuery="" />
           </TabsContent>
 
@@ -92,7 +93,6 @@ export default function Deals() {
               <h2 className="text-xl font-semibold">New Deals</h2>
               <Badge variant="secondary">Fresh</Badge>
             </div>
-            <GameGrid games={newDeals} selectedRegion={selectedRegion} />
             <GameGrid games={newDeals} selectedRegion={selectedRegion} searchQuery="" />
           </TabsContent>
 
@@ -102,7 +102,6 @@ export default function Deals() {
               <h2 className="text-xl font-semibold">Top Rated Games on Sale</h2>
               <Badge variant="outline">Quality</Badge>
             </div>
-            <GameGrid games={topRated} selectedRegion={selectedRegion} />
             <GameGrid games={topRated} selectedRegion={selectedRegion} searchQuery="" />
           </TabsContent>
         </Tabs>

@@ -1,15 +1,15 @@
 import { regions } from '@/data/regions';
-import { Game, Region } from '@/types/game';
+import { Game } from '@/types/game';
 import { GameCard } from './GameCard';
 import { AlertCircle, Search } from 'lucide-react';
 
 interface GameGridProps {
   games: Game[];
   selectedRegion: string;
-  searchQuery: string;
+  searchQuery?: string;
 }
 
-export function GameGrid({ games, selectedRegion, searchQuery }: GameGridProps) {
+export function GameGrid({ games, selectedRegion, searchQuery = "" }: GameGridProps) {
   const region = regions.find(r => r.code === selectedRegion) || regions[0];
 
   const filteredGames = games.filter(game =>

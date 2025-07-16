@@ -10,7 +10,12 @@ interface SearchBarProps {
   className?: string;
 }
 
-export function SearchBar({ searchQuery, onSearchChange, placeholder = "Search games...", className }: SearchBarProps) {
+export function SearchBar({ 
+  searchQuery, 
+  onSearchChange, 
+  placeholder = "Search games...", 
+  className = "" 
+}: SearchBarProps) {
   const [isFocused, setIsFocused] = useState(false);
 
   const handleClear = () => {
