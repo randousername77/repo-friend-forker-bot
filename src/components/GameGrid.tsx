@@ -62,3 +62,4 @@ export function GameGrid({ games, selectedRegion, searchQuery }: GameGridProps) 
       })}
     </div>
   );
+}
