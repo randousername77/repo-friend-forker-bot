@@ -1,3 +1,4 @@
+import { regions } from '@/data/regions';
 import { Layout } from "@/components/Layout";
 import { GameGrid } from "@/components/GameGrid";
 import { useGameData } from "@/hooks/useGameData";
@@ -82,6 +83,7 @@ export default function Deals() {
               <Badge variant="destructive" className="animate-pulse">Live</Badge>
             </div>
             <GameGrid games={hotDeals} selectedRegion={selectedRegion} />
+            <GameGrid games={hotDeals} selectedRegion={selectedRegion} searchQuery="" />
           </TabsContent>
 
           <TabsContent value="new-deals" className="space-y-6">
@@ -91,6 +93,7 @@ export default function Deals() {
               <Badge variant="secondary">Fresh</Badge>
             </div>
             <GameGrid games={newDeals} selectedRegion={selectedRegion} />
+            <GameGrid games={newDeals} selectedRegion={selectedRegion} searchQuery="" />
           </TabsContent>
 
           <TabsContent value="top-rated" className="space-y-6">
@@ -100,6 +103,7 @@ export default function Deals() {
               <Badge variant="outline">Quality</Badge>
             </div>
             <GameGrid games={topRated} selectedRegion={selectedRegion} />
+            <GameGrid games={topRated} selectedRegion={selectedRegion} searchQuery="" />
           </TabsContent>
         </Tabs>
 

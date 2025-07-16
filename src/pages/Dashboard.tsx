@@ -1,3 +1,4 @@
+import { regions } from '@/data/regions';
 import { Layout } from "@/components/Layout";
 import { GameGrid } from "@/components/GameGrid";
 import { useGameData } from "@/hooks/useGameData";
@@ -10,6 +11,8 @@ import { useState } from "react";
 export default function Dashboard() {
   const { games, loading, error } = useGameData();
   const [selectedRegion, setSelectedRegion] = useState("US");
+
+  const region = regions.find(r => r.code === selectedRegion) || regions[0];
 
   if (loading) {
     return (
@@ -106,7 +109,7 @@ export default function Dashboard() {
               </div>
             </div>
             
-            <GameGrid games={featuredDeals} selectedRegion={selectedRegion} />
+            <GameGrid games={featuredDeals} selectedRegion={selectedRegion} searchQuery="" />
           </div>
         </div>
 

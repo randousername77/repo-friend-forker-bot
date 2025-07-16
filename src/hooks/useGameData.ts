@@ -62,29 +62,8 @@ export function useGameData() {
   }, []);
 
   const refetch = () => {
-    setGames([]);
-    setError(null);
-    setLoading(true);
-    
-    // Re-trigger the effect
-    useEffect(() => {
-      const loadGames = async () => {
-        try {
-          await new Promise(resolve => setTimeout(resolve, 500));
-          setGames(mockGames);
-        } catch (err) {
-          setError({
-            code: 'ERR_REFETCH_001',
-            message: 'Failed to refresh game data.',
-            type: 'unknown'
-          });
-        } finally {
-          setLoading(false);
-        }
-      };
-      
-      loadGames();
-    }, []);
+    // Simple refetch implementation
+    window.location.reload();
   };
 
   return { games, loading, error, refetch };

@@ -172,7 +172,7 @@ export default function StorePage() {
           </div>
           
           {storeGames.length > 0 ? (
-            <GameGrid games={storeGames} selectedRegion={selectedRegion} />
+            <GameGrid games={storeGames} selectedRegion={selectedRegion} searchQuery="" />
           ) : (
             <div className="text-center py-12">
               <div className="w-16 h-16 bg-muted rounded-full flex items-center justify-center mx-auto mb-4">
