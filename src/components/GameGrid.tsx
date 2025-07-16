@@ -1,17 +1,14 @@
-import { regions } from '@/data/regions';
-import { Game } from '@/types/game';
+import { Game, Region } from '@/types/game';
 import { GameCard } from './GameCard';
 import { AlertCircle, Search } from 'lucide-react';
 
 interface GameGridProps {
   games: Game[];
-  selectedRegion: string;
-  searchQuery?: string;
+  selectedRegion: Region;
+  searchQuery: string;
 }
 
-export function GameGrid({ games, selectedRegion, searchQuery = "" }: GameGridProps) {
-  const region = regions.find(r => r.code === selectedRegion) || regions[0];
-
+export function GameGrid({ games, selectedRegion, searchQuery }: GameGridProps) {
   const filteredGames = games.filter(game =>
     game.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
     game.developer.toLowerCase().includes(searchQuery.toLowerCase()) ||
@@ -45,7 +42,7 @@ export function GameGrid({ games, selectedRegion, searchQuery = "" }: GameGridPr
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
       {filteredGames.map(game => {
-        const regionPrices = game.prices[selectedRegion] || [];
+        const regionPrices = game.prices[selectedRegion.code] || [];
         
         if (regionPrices.length === 0) {
           return null; // Skip games without prices in selected region
@@ -56,7 +53,7 @@ export function GameGrid({ games, selectedRegion, searchQuery = "" }: GameGridPr
             key={game.id}
             game={game}
             regionPrices={regionPrices}
-            currency={region.currency}
+            currency={selectedRegion.currency}
           />
         );
       })}

@@ -1,24 +1,26 @@
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
+import { Region } from '@/types/game';
 import { regions } from '@/data/regions';
 
 interface RegionSelectorProps {
-  selectedRegion: string;
-  onRegionChange: (regionCode: string) => void;
+  selectedRegion: Region;
+  onRegionChange: (region: Region) => void;
 }
 
 export function RegionSelector({ selectedRegion, onRegionChange }: RegionSelectorProps) {
-  const currentRegion = regions.find(r => r.code === selectedRegion) || regions[0];
-
   return (
     <Select 
-      value={selectedRegion} 
-      onValueChange={onRegionChange}
+      value={selectedRegion.code} 
+      onValueChange={(code) => {
+        const region = regions.find(r => r.code === code);
+        if (region) onRegionChange(region);
+      }}
     >
       <SelectTrigger className="w-48">
         <SelectValue>
           <div className="flex items-center gap-2">
-            <span className="text-lg">{currentRegion.flag}</span>
-            <span>{currentRegion.name}</span>
+            <span className="text-lg">{selectedRegion.flag}</span>
+            <span>{selectedRegion.name}</span>
           </div>
         </SelectValue>
       </SelectTrigger>
