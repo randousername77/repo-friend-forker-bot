@@ -44,7 +44,7 @@ export function GameCard({ game, regionPrices, currency }: GameCardProps) {
             className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
             onError={(e) => {
               const target = e.target as HTMLImageElement;
-              target.src = '/placeholder-game-cover.jpg';
+              target.src = 'https://images.pexels.com/photos/442576/pexels-photo-442576.jpeg?auto=compress&cs=tinysrgb&w=400&h=533&fit=crop';
             }}
           />
           {game.metacriticScore && (

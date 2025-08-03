@@ -26,18 +26,20 @@ const storeNames: Record<Store, string> = {
 
 export function StoreIcon({ store, className = "w-6 h-6" }: StoreIconProps) {
   return (
-    <img 
-      src={storeIcons[store]} 
-      alt={storeNames[store]}
-      className={className}
-      onError={(e) => {
-        // Fallback to text if icon fails to load
-        const target = e.target as HTMLImageElement;
-        target.style.display = 'none';
-        if (target.nextSibling) {
-          (target.nextSibling as HTMLElement).style.display = 'inline';
-        }
-      }}
-    />
+    <div className={`flex items-center justify-center ${className}`}>
+      <img 
+        src={storeIcons[store]} 
+        alt={storeNames[store]}
+        className="w-full h-full object-contain"
+        onError={(e) => {
+          // Fallback to text if icon fails to load
+          const target = e.target as HTMLImageElement;
+          const parent = target.parentElement;
+          if (parent) {
+            parent.innerHTML = `<span class="text-xs font-medium">${storeNames[store]}</span>`;
+          }
+        }}
+      />
+    </div>
   );
 }

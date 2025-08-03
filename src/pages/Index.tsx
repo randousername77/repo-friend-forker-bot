@@ -1,9 +1,9 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Header } from '@/components/Header';
 import { GameGrid } from '@/components/GameGrid';
 import { ErrorDialog } from '@/components/ErrorDialog';
 import { useGameData } from '@/hooks/useGameData';
-import { regions, defaultRegion } from '@/data/regions';
+import { defaultRegion } from '@/data/regions';
 import { Region } from '@/types/game';
 import { Loader2 } from 'lucide-react';
 
@@ -15,9 +15,11 @@ const Index = () => {
   const { games, loading, error } = useGameData();
 
   // Show error dialog when error occurs
-  if (error && !showErrorDialog) {
-    setShowErrorDialog(true);
-  }
+  useEffect(() => {
+    if (error && !showErrorDialog) {
+      setShowErrorDialog(true);
+    }
+  }, [error, showErrorDialog]);
 
   const handleErrorClose = () => {
     setShowErrorDialog(false);
